@@ -20,11 +20,11 @@
           <ion-input label="Apellido" [(ngModel)]="lastname"></ion-input>
       </ion-item>
       <ion-item>
-          <ion-select label="Nivel Educacional" [(ngModel)]="edLevel" placeholder="Elige una opción">
-              <ion-select-option *ngFor="let level of edLevels | keyvalue"
-              value="level.key"> {{level.value}}
-              </ion-select-option>
-          </ion-select>
+        <ion-select label="Nivel Educacional" [(ngModel)]="edLevel" placeholder="Elige una opción">
+          <ion-select-option *ngFor="let level of getOrderedEdLevels()" [value]="level[0]">
+            {{level[1]}}
+          </ion-select-option>
+        </ion-select>
       </ion-item>
       <ion-item>
           <ion-input label="Fec. Nac." [(ngModel)]="birthday" readonly>

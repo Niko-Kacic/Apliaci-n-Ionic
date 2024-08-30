@@ -33,7 +33,13 @@ export class HomePage {
     this.edLevels.set('superior', 'Ed Superior');
     this.edLevels.set('post', 'Postgrado');
 
+
   }
+
+  getOrderedEdLevels() {
+    return Array.from(this.edLevels.entries());
+  }
+
 
   async showInfo() {
     const alert = await this.alertController.create({
